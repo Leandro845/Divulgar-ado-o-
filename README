@@ -1,0 +1,177 @@
+Project Ado.TE
+
+The Ado.TE Project is a practical system developed as part of the Python Full course. This system facilitates pet adoption, where users can register pets for adoption, request adoptions, and manage adoption requests.
+Key Features
+
+    Pet Registration: Users can enter detailed information about pets available for adoption, including name, photo, breed, description, location, and tags.
+
+    Pet Filtering: Users can filter pets by city and breed to find those they wish to adopt.
+
+    Adoption Requests: Users can request the adoption of pets available on the platform.
+
+    Request Management: Administration of adoption requests, allowing approval or rejection of adoption applications.
+
+Environment Setup
+
+To run the project locally, follow the steps below:
+Prerequisites
+
+    Python 3.6 or higher
+    Django 3.0 or higher
+    MySQL database
+
+Installation
+
+    Clone the repository
+
+    bash
+
+git clone https://github.com/your-username/adote.git
+cd adote
+
+Install dependencies
+
+bash
+
+pip install -r requirements.txt
+
+Configuration
+
+    Create an .env file in the project root with the necessary environment variables (see .env.example for reference).
+
+    Configure environment variables for MySQL database connection in the settings.py file.
+
+Apply migrations
+
+bash
+
+python manage.py migrate
+
+Create a superuser
+
+bash
+
+python manage.py createsuperuser
+
+Run the development server
+
+bash
+
+    python manage.py runserver
+
+    Access the system
+
+    Open your browser and visit http://localhost:8000.
+
+Usage
+
+    Log in as an administrator to manage pets, adoption requests, and users.
+
+    As a regular user, register pets for adoption, filter pets by city and breed, and request adoptions.
+
+Technologies Used
+
+    Python
+    Django
+    HTML/CSS (Bootstrap)
+    JavaScript (Chart.js)
+
+Contributions
+
+Contributions are welcome! Feel free to submit pull requests with improvements or bug fixes.
+License
+
+This project is licensed under the MIT License.
+
+
+
+
+## And now in Portuguese:
+
+
+
+
+Projeto Ado.TE
+
+O Projeto Ado.TE é um sistema prático desenvolvido como parte do curso Python Full. Este sistema facilita a adoção de pets, onde os usuários podem cadastrar pets para adoção, solicitar adoções e gerenciar pedidos de adoção.
+Funcionalidades Principais
+
+    Cadastro de Pets: Os usuários podem inserir informações detalhadas sobre pets disponíveis para adoção, incluindo nome, foto, raça, descrição, localização e tags.
+
+    Filtragem de Pets: Os usuários podem filtrar pets por cidade e raça para encontrar aqueles que desejam adotar.
+
+    Pedidos de Adoção: Os usuários podem solicitar a adoção de pets disponíveis na plataforma.
+
+    Gestão de Pedidos: Administração de pedidos de adoção, permitindo a aprovação ou recusa de solicitações de adoção.
+
+Configuração do Ambiente
+
+Para executar o projeto localmente, siga os passos abaixo:
+Pré-requisitos
+
+    Python 3.6 ou superior
+    Django 3.0 ou superior
+    Banco de dados MySQL
+
+Instalação
+
+    Clone o repositório
+
+    bash
+
+git clone https://github.com/seu-usuario/adote.git
+cd adote
+
+Instale as dependências
+
+bash
+
+pip install -r requirements.txt
+
+Configuração
+
+    Crie um arquivo .env na raiz do projeto com as variáveis de ambiente necessárias (veja .env.example para referência).
+
+    Configure as variáveis de ambiente para conexão com o banco de dados MySQL no arquivo settings.py.
+
+Execute as migrações
+
+bash
+
+python manage.py migrate
+
+Crie um superusuário
+
+bash
+
+python manage.py createsuperuser
+
+Execute o servidor de desenvolvimento
+
+bash
+
+    python manage.py runserver
+
+    Acesse o sistema
+
+    Abra seu navegador e visite http://localhost:8000.
+
+Uso
+
+    Faça login como administrador para gerenciar pets, pedidos de adoção e usuários.
+
+    Como usuário regular, cadastre pets para adoção, filtre pets por cidade e raça, e solicite adoções.
+
+Tecnologias Utilizadas
+
+    Python
+    Django
+    HTML/CSS (Bootstrap)
+    JavaScript (Chart.js)
+
+Contribuições
+
+Contribuições são bem-vindas! Sinta-se à vontade para enviar pull requests com melhorias ou correções de bugs.
+Licença
+
+Este projeto está licenciado sob a Licença MIT.

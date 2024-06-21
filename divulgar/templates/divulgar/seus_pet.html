@@ -1,7 +1,7 @@
 {% load static %}
 <!doctype html>
 <html lang="pt-BR">
-    <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cadastro</title>
@@ -9,79 +9,69 @@
     <link href="{% static 'usuarios/css/cadastro.css' %}" rel="stylesheet">
     <link href="{% static 'divulgar/css/novo_pet.css' %}" rel="stylesheet">
     <link href="{% static 'divulgar/css/seus_pet.css' %}" rel="stylesheet">
-    </head>
-    <body>
-
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-2 bg-side sidebar">
-                    <h2>ADO.TE</h2>
-                    <hr>
-
-
-                </div>
-
-                <div class="col-md">
-                    <div class="wrapper">
-                        <div class="box width80">
-
-                            {% include 'parciais/_message.html' %}
-
-                            <h3 class="font-vinho">Quero divulgar</h3>
-                            <hr>
-
-                             <table class="tabela" cellpadding="20">
-                                <tr>
-                                    <th>Foto</th>
-                                    <th>Nome</th>
-                                    <th>Raça</th>
-                                    <th>Status</th>
-                                    <th>Remover</th>
-                                </tr>
-                                    {% for pet in pets %}
-                                    <tr class="tabela-linha">
-                                        {% if pet.foto %}
-                                            <td width="20%">
-                                                <img width="40%" src="{{ pet.foto.url }}">
-                                            </td>
-                                        {% endif %}
-
-                                        <td>
-                                            {{ pet.nome }}
-                                        </td>
-                                        <td>
-                                            {{ pet.raca }}
-
-                                        </td>
-                                        <td>
-                                            {% if pet.status == 'P' %}
-                                            <b>Para adoção</b>
-                                            {% elif pet.status == 'A' %}
-                                            <b>Adotado</b>
-                                            {% endif %}
-
-
-                                        </td>
-                                        <td>
-                                            <a href="{% url 'remover_pet' pet.id %}" class="btn btn-danger">REMOVER</a>
-                                        </td>
-                                    </tr>
-                                    {% endfor %}
-
-
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-2 bg-side sidebar">
+                <h2>ADO.TE</h2>
+                <hr>
+                <!-- Sidebar content can be added here if needed -->
             </div>
 
+            <!-- Main Content -->
+            <div class="col-md">
+                <div class="wrapper">
+                    <div class="box width80">
+                        <!-- Include messages from partial template -->
+                        {% include 'parciais/_message.html' %}
 
+                        <h3 class="font-vinho">Quero divulgar</h3>
+                        <hr>
+
+                        <!-- Table for listing pets -->
+                        <table class="tabela" cellpadding="20">
+                            <tr>
+                                <th>Foto</th>
+                                <th>Nome</th>
+                                <th>Raça</th>
+                                <th>Status</th>
+                                <th>Remover</th>
+                            </tr>
+                            {% for pet in pets %}
+                            <tr class="tabela-linha">
+                                {% if pet.foto %}
+                                <td width="20%">
+                                    <img width="40%" src="{{ pet.foto.url }}">
+                                </td>
+                                {% endif %}
+                                <td>
+                                    {{ pet.nome }}
+                                </td>
+                                <td>
+                                    {{ pet.raca }}
+                                </td>
+                                <td>
+                                    {% if pet.status == 'P' %}
+                                    <b>Para adoção</b>
+                                    {% elif pet.status == 'A' %}
+                                    <b>Adotado</b>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <a href="{% url 'remover_pet' pet.id %}" class="btn btn-danger">REMOVER</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
 
-
-
-
+    <!-- Bootstrap JS bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
+</body>
 </html>

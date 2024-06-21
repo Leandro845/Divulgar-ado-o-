@@ -1,7 +1,7 @@
-{% if messages %}
-    {% for message in messages %}
-        <div class="alert {{ message.tags }}" role="alert">
-          {{ message }}
+{% if messages %}  <!-- Check if there are any messages to display -->
+    {% for message in messages %}  <!-- Iterate through each message -->
+        <div class="alert {{ message.tags }}" role="alert">  <!-- Bootstrap alert div with dynamic classes -->
+            {{ message }}  <!-- Display the message content -->
         </div>
     {% endfor %}
 {% endif %}

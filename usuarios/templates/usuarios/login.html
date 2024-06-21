@@ -1,62 +1,60 @@
-{% load static %}
+{% load static %}  <!-- Load static files like CSS and images -->
+
 <!doctype html>
 <html lang="pt-BR">
-    <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login</title>
+    <!-- Link to Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Link to your custom CSS -->
     <link href="{% static 'usuario/css/cadastro.css' %}" rel="stylesheet">
+</head>
+<body>
 
-    </head>
-    <body>
-
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-5 bg-side">
-                    <div class='header'>
-                        <img src="{% static 'usuarios/img/logo_adote.png' %}" width="9%"><span class="font-logo">ADO.TE</span>
-                    </div>
-
-                    <div class="body-form">
-
-                        {% include 'parciais/_message.html' %}
-
-                        <h2>Logar</h2>
-                        <p>Que bom ter você de volta.</p>
-                        <hr>
-                        <form action="{% url 'login' %}" method="POST">
-                          {% csrf_token %}
-                            <span>Nome:</span>
-                            <input type="text" class="form-control" placeholder="Digite seu nome..." name="nome">
-                            <br>
-
-                            <span>Senha:</span>
-                            <input type="password" class="form-control" placeholder="Digite sua senha..." name="senha">
-
-
-                            <input type="submit" value="SALVAR" class="btn-custom-primary">
-
-                            <a href="" class="link-float">Cadastre-se</a>
-                        </form>
-                    </div>
-                </div>
-
-                <div class="col-md-7">
-                    <div class="side-logo">
-                        <img class="logo-margin-top" src="{% static 'usuarios/img/logo_adote.png' %}" width="20%">
-                        <h1>ADO.TE</h1>
-                        <p>Nos ajude a salvar vidas.</p>
-                    </div>
-                </div>
-
+<div class="container-fluid">
+    <div class="row">
+        <!-- Left column with login form -->
+        <div class="col-md-5 bg-side">
+            <div class='header'>
+                <!-- Logo and brand name -->
+                <img src="{% static 'usuarios/img/logo_adote.png' %}" width="9%"><span class="font-logo">ADO.TE</span>
             </div>
 
+            <div class="body-form">
+                <!-- Include for displaying messages (e.g., success or error messages) -->
+                {% include 'parciais/_message.html' %}
 
-
+                <h2>Logar</h2>
+                <p>Que bom ter você de volta.</p>
+                <hr>
+                <!-- Login form -->
+                <form action="{% url 'login' %}" method="POST">
+                    {% csrf_token %}  <!-- CSRF token for security -->
+                    <span>Nome:</span>
+                    <input type="text" class="form-control" placeholder="Digite seu nome..." name="nome">
+                    <br>
+                    <span>Senha:</span>
+                    <input type="password" class="form-control" placeholder="Digite sua senha..." name="senha">
+                    <input type="submit" value="SALVAR" class="btn-custom-primary">
+                    <a href="" class="link-float">Cadastre-se</a>
+                </form>
+            </div>
         </div>
 
+        <!-- Right column with branding -->
+        <div class="col-md-7">
+            <div class="side-logo">
+                <img class="logo-margin-top" src="{% static 'usuarios/img/logo_adote.png' %}" width="20%">
+                <h1>ADO.TE</h1>
+                <p>Nos ajude a salvar vidas.</p>
+            </div>
+        </div>
+    </div>
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
+<!-- Bootstrap JS bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
